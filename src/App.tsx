@@ -1,4 +1,5 @@
 import './App.css'
+import CountryInfo from './components/country-info/CountryInfo'
 import TabAways from './components/tab-detection/TabAway'
 import Timer from './components/timer/Timer'
 
@@ -11,7 +12,7 @@ function App() {
       </p>
 
       <section>
-        <TabAways />
+        <CountryInfo />
       </section>
     </main>
   )
