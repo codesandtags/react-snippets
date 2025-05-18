@@ -1,4 +1,5 @@
 import './App.css'
+import TabAways from './components/tab-detection/TabAway'
 import Timer from './components/timer/Timer'
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
       </p>
 
       <section>
-        <Timer />
+        <TabAways />
       </section>
     </main>
   )
