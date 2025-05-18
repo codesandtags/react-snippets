@@ -8,6 +8,23 @@ type CountryData = {
   area: number;
 };
 
+
+/**
+ * CountryInfo React component displays information about a selected country.
+ *
+ * This component allows users to select a country from a dropdown list and fetches
+ * relevant country data (name, capital, region, population, area) from the REST Countries API.
+ * It handles loading and error states, and displays the fetched data in a table format.
+ *
+ * @component
+ *
+ * @example
+ * ```tsx
+ * <CountryInfo />
+ * ```
+ *
+ * @returns {JSX.Element} The rendered country information section.
+ */
 export default function CountryInfo() {
   const [countryCode, setCountryCode] = useState<string>("AU");
   const [data, setData] = useState<CountryData | null>(null);
@@ -20,7 +37,12 @@ export default function CountryInfo() {
   };
 
   useEffect(() => {
+    // Cleanup function to prevent state updates on unmounted component
+    let ignore = false;
+
     const fetchCountryData = async () => {
+      if (ignore) return;
+
       const url = `https://restcountries.com/v2/alpha/${countryCode}`;
       setIsLoading(true);
 
@@ -39,6 +61,10 @@ export default function CountryInfo() {
     };
 
     fetchCountryData();
+
+    return () => {
+      ignore = true;
+    };
   }, [countryCode]);
 
   return (
