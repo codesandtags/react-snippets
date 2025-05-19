@@ -1,4 +1,5 @@
 import './App.css'
+import ClickOutside from './components/click-outside/ClickOutside'
 import CountryInfo from './components/country-info/CountryInfo'
 import HackerNewsSearch from './components/hacker-news-search/HackerNewsSearch'
 import Stopwatch from './components/stop-watch/Stopwatch'
@@ -15,7 +16,7 @@ function App() {
       </p>
 
       <section>
-        <ToolbarContainer />
+        <ClickOutside />
       </section>
     </main>
   )
