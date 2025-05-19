@@ -4,6 +4,7 @@ import HackerNewsSearch from './components/hacker-news-search/HackerNewsSearch'
 import Stopwatch from './components/stop-watch/Stopwatch'
 import TabAways from './components/tab-detection/TabAway'
 import Timer from './components/timer/Timer'
+import ToolbarContainer from './components/toolbar/ToolbarContainer'
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
       </p>
 
       <section>
-        <Stopwatch />
+        <ToolbarContainer />
       </section>
     </main>
   )

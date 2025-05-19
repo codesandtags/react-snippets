@@ -1,0 +1,53 @@
+:root {
+  --beige: #f5f5dc;
+  --charcoal: #333333;
+  --yellow: #ffe066;
+}
+
+
+.white {
+  height: 98vh;
+  width: 100vw;
+  background: var(--beige);
+}
+
+.black {
+  height: 98vh;
+  width: 100vw;
+  background: var(--charcoal);
+}
+
+.yellow {
+  height: 98vh;
+  width: 100vw;
+  background: var(--yellow);
+}
+
+.toolbar {
+  display: flex;
+  position: fixed;
+  top: 15px;
+  right: 10px;
+  border: 0.5px solid var(--charcoal);
+  border-radius: 2px;
+}
+
+.white-btn {
+  background: var(--beige);
+  border-radius: 2px 0 0 2px;
+}
+
+.yellow-btn {
+  background: var(--yellow);
+  border-radius: 0;
+}
+
+.black-btn {
+  background: var(--charcoal);
+  border-radius: 0 2px 2px 0;
+}
+
+body button:hover {
+  filter: brightness(1.1);
+  opacity: 1;
+}
