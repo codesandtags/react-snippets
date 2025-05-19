@@ -1,11 +1,6 @@
 import './App.css'
-import ClickOutside from './components/click-outside/ClickOutside'
-import CountryInfo from './components/country-info/CountryInfo'
-import HackerNewsSearch from './components/hacker-news-search/HackerNewsSearch'
-import Stopwatch from './components/stop-watch/Stopwatch'
-import TabAways from './components/tab-detection/TabAway'
-import Timer from './components/timer/Timer'
-import ToolbarContainer from './components/toolbar/ToolbarContainer'
+
+import FollowTheLeader from './components/follow-the-leader/FollowTheLeader'
 
 function App() {
   return (
@@ -16,7 +11,7 @@ function App() {
       </p>
 
       <section>
-        <ClickOutside />
+        <FollowTheLeader />
       </section>
     </main>
   )
