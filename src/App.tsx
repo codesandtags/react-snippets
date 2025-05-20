@@ -1,6 +1,6 @@
 import './App.css'
 
-import FollowTheLeader from './components/follow-the-leader/FollowTheLeader'
+import TranslationLanguage from './context/translation-language/TranslationLanguage'
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       </p>
 
       <section>
-        <FollowTheLeader />
+        <TranslationLanguage />
       </section>
     </main>
   )
