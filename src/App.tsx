@@ -1,6 +1,5 @@
 import './App.css'
-import ReactRuler from './optimization/react-ruler/ReactRuler'
-
+import MatchMedia from './optimization/match-media/MatchMedia'
 
 function App() {
   return (
@@ -11,7 +10,7 @@ function App() {
       </p>
 
       <section>
-        <ReactRuler />
+        <MatchMedia />
       </section>
     </main>
   )
