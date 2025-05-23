@@ -1,6 +1,6 @@
 import './App.css'
+import ReactRuler from './optimization/react-ruler/ReactRuler'
 
-import TranslationLanguage from './context/translation-language/TranslationLanguage'
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       </p>
 
       <section>
-        <TranslationLanguage />
+        <ReactRuler />
       </section>
     </main>
   )
