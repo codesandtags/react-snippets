@@ -12,15 +12,49 @@ export function isMouseEvent(event) {
 
 export default function useLongPress(callback, options = {}) {
   const { threshold = 400, onStart, onFinish, onCancel } = options;
+  const isLongPressActive = React.useRef(false);
+  const isPressed = React.useRef(false);
+  const timerId = React.useRef();
 
   return React.useMemo(() => {
     if (typeof callback !== "function") {
       return {};
     }
 
-    const start = (event) => {};
+    const start = (event) => {
+      if (!isMouseEvent(event) && !isTouchEvent(event)) return;
 
-    const cancel = (event) => {};
+      if (onStart) {
+        onStart(event);
+      }
+
+      isPressed.current = true;
+      timerId.current = setTimeout(() => {
+        callback(event);
+        isLongPressActive.current = true;
+      }, threshold);
+    };
+
+    const cancel = (event) => {
+      if (!isMouseEvent(event) && !isTouchEvent(event)) return;
+
+      if (isLongPressActive.current) {
+        if (onFinish) {
+          onFinish(event);
+        }
+      } else if (isPressed.current) {
+        if (onCancel) {
+          onCancel(event);
+        }
+      }
+
+      isLongPressActive.current = false;
+      isPressed.current = false;
+
+      if (timerId.current) {
+        window.clearTimeout(timerId.current);
+      }
+    };
 
     const mouseHandlers = {
       onMouseDown: start,
