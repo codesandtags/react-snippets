@@ -45,7 +45,7 @@ export default function useLongPress(callback, options = {}) {
       } else if (isPressed.current) {
         if (onCancel) {
           onCancel(event);
-        }
+        }w
       }
 
       isLongPressActive.current = false;
