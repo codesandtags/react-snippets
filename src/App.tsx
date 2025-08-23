@@ -1,19 +1,30 @@
 import './App.css'
-import MatchMedia from './optimization/match-media/MatchMedia'
+
+import { DeduplicationExample } from './react-query/deduplication-example/DeduplicationExample'
 
 function App() {
   return (
-    <main>
-      <h1>React Snippets</h1>
-      <p>
-        A set of `React Snippets` used for common projects.
-      </p>
+    <div className="app-container">
+      {/* Header with site title */}
+      <header className="site-header">
+        <h1>React Snippets</h1>
+        <p>A collection of useful code snippets for React developers.</p>
+      </header>
 
-      <section>
-        <MatchMedia />
-      </section>
-    </main>
-  )
+      {/* Main content area */}
+      <main className="main-content">
+        <section className="snippet-section">
+          <h2>React Query Deduplication Example</h2>
+          <DeduplicationExample />
+        </section>
+      </main>
+
+      {/* Footer */}
+      <footer className="site-footer">
+        <p>Built with React & CSS Variables</p>
+      </footer>
+    </div>
+  );
 }
 
 export default App

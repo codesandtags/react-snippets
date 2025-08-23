@@ -1,48 +1,95 @@
+/* apply reset.css styles first */
+@import './styles/reset.css';
+/* Apply theme */
+@import './styles/theme.css';
+
+/* src/App.css */
+
+/* Global styles applied to the body */
 #root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: var(--font-family-sans);
+  line-height: var(--line-height-base);
+  transition: background-color var(--transition-speed) var(--transition-ease),
+              color var(--transition-speed) var(--transition-ease);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-main {
-  position: relative;
+/* App container layout */
+.app-container {
   width: 100%;
+  margin: 0 auto;
+  padding: var(--spacing-md);
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: var(--spacing-lg);
+  flex: 1;
+  background-color: var(--surface-color);
+}
+
+/* Header styling */
+.site-header {
+  text-align: center;
+  padding: var(--spacing-lg) 0;
+}
+
+.site-header h1 {
+  font-size: 2.5rem;
+  color: var(--heading-color);
+}
+
+/* Main content and sections */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md); /* Use flexbox gap for consistent spacing */
+}
+
+/* Style for each snippet card */
+.snippet-card {
+  background-color: var(--surface-color);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-md);
+  box-shadow: var(--box-shadow-md);
+  border: var(--border-width) solid var(--border-color);
+}
+
+.snippet-card h2 {
+  color: var(--accent-color);
+  font-size: var(--font-size-lg);
+  margin-top: 0;
+}
+
+/* Code block styling */
+.code-block {
+  background-color: var(--code-background);
+  color: var(--text-color);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-sm);
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-x: auto;
+}
+
+/* Footer styling */
+.site-footer {
+  text-align: center;
+  padding: var(--spacing-md) 0;
+  border-top: var(--border-width) solid var(--border-color);
+  margin-top: var(--spacing-lg);
+  font-size: var(--font-size-sm);
+  color: var(--text-color);
 }
