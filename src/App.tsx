@@ -1,7 +1,6 @@
 import './App.css'
 
-import { DeduplicationExample } from './react-query/deduplication-example/DeduplicationExample'
-import { MediaContainer } from './react-query/media-devices/MediaDevices';
+import Repos from './react-query/repos/Repos.tsx'
 
 function App() {
   return (
@@ -21,7 +20,7 @@ function App() {
       </main> */}
       
       <main>
-        <MediaContainer />
+        <Repos />
       </main>
 
       {/* Footer */}
