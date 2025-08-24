@@ -1,6 +1,7 @@
 import './App.css'
 
 import { DeduplicationExample } from './react-query/deduplication-example/DeduplicationExample'
+import { MediaContainer } from './react-query/media-devices/MediaDevices';
 
 function App() {
   return (
@@ -12,11 +13,15 @@ function App() {
       </header>
 
       {/* Main content area */}
-      <main className="main-content">
+      {/* <main className="main-content">
         <section className="snippet-section">
           <h2>React Query Deduplication Example</h2>
           <DeduplicationExample />
         </section>
+      </main> */}
+      
+      <main>
+        <MediaContainer />
       </main>
 
       {/* Footer */}
